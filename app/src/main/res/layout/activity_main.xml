@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C9D1BF"
+    android:background="@color/teal_700"
     tools:context=".MainActivity">
 
     <Button
@@ -32,6 +32,7 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/diceValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/dice_1" />
+        tools:srcCompat="@drawable/dice_1"
+        android:contentDescription="@string/the_dice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
