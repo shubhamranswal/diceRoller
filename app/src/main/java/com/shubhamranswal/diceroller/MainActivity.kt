@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.google.android.material.internal.ContextUtils.getActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button= findViewById(R.id.rollButton)
         rollButton.setOnClickListener { rollDice() }
+
+
+
     }
 
     private fun rollDice() {
@@ -20,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         val resultDiceValue: TextView = findViewById(R.id.diceValue)
         resultDiceValue.text = diceRoll.toString()
+
+        Toast.makeText(this, "Dice rolled and the value generated", Toast.LENGTH_SHORT).show();
     }
 }
 
