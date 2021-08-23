@@ -7,6 +7,7 @@
     android:background="@color/teal_700"
     tools:context=".MainActivity">
 
+<!--    The Dice Roll Button     -->
     <Button
         android:id="@+id/rollButton"
         android:layout_width="wrap_content"
@@ -23,6 +24,8 @@
         app:layout_constraintTop_toBottomOf="@+id/diceValue"
         app:layout_constraintVertical_bias="0.503" />
 
+
+<!--    The heading at the top   -->
     <TextView
         android:id="@+id/heading"
         android:layout_width="wrap_content"
@@ -38,6 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+<!--    The images of the dices shown   -->
     <ImageView
         android:id="@+id/diceValue"
         android:layout_width="199dp"
