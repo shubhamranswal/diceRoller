@@ -12,7 +12,7 @@
         android:id="@+id/rollButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="serif-monospace"
         android:includeFontPadding="false"
         android:text="@string/roll"
         android:textAlignment="center"
@@ -30,7 +30,7 @@
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="serif-monospace"
         android:text="@string/the_dice_app"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -45,13 +45,15 @@
 <!--    The images of the dices shown   -->
     <ImageView
         android:id="@+id/diceValue"
-        android:layout_width="199dp"
-        android:layout_height="180dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/the_dice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/dice_1"
-        android:contentDescription="@string/the_dice" />
+        app:layout_constraintVertical_bias="0.499"
+        tools:srcCompat="@drawable/dice1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

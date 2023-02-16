@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Dice Roll</string>
     <string name="value_1">1</string>
-    <string name="roll">Roll</string>
+    <string name="roll">Roll the Dice</string>
     <string name="the_dice_app">The Dice App</string>
     <string name="the_dice">The Dice</string>
 </resources>

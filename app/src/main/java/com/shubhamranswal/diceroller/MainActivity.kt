@@ -1,25 +1,33 @@
 package com.shubhamranswal.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import com.google.android.material.internal.ContextUtils.getActivity
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button= findViewById(R.id.rollButton)
-        rollButton.setOnClickListener { rollDice() }
+        val imageView = findViewById<ImageView>(R.id.diceValue)
+        imageView.setImageResource(R.drawable.dice6)
 
+        val rollButton: Button= findViewById(R.id.rollButton)
+        rollButton.setOnClickListener {
+
+            showRandomImages()
+
+        }
 
     }
 
     private fun rollDice() {
+
+
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
@@ -27,19 +35,41 @@ class MainActivity : AppCompatActivity() {
 
         // Determine which drawable resource ID to use based on the dice roll
         val diceResult = when (diceRoll) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
+
+            1 -> R.drawable.dice1
+            2 -> R.drawable.dice2
+            3 -> R.drawable.dice3
+            4 -> R.drawable.dice4
+            5 -> R.drawable.dice5
+            else -> R.drawable.dice6
         }
 
         // Update the ImageView with the correct drawable resource ID
         diceImage.setImageResource(diceResult)
+    }
 
+    private fun showRandomImages() {
 
-        Toast.makeText(this, "Dice rolled and the value generated $diceRoll", Toast.LENGTH_SHORT).show();
+        val timer = object: CountDownTimer(1250, 50) {
+            override fun onTick(millisUntilFinished: Long) {
+                val imageIds = intArrayOf(
+                    R.drawable.dice1,
+                    R.drawable.dice2,
+                    R.drawable.dice3,
+                    R.drawable.dice4,
+                    R.drawable.dice5,
+                    R.drawable.dice6,
+                )
+
+                val imageView : ImageView = findViewById(R.id.diceValue)
+
+                imageView.setImageResource(imageIds.random())
+            }
+            override fun onFinish() {
+                rollDice()
+            }
+        }
+        timer.start()
     }
 }
 
